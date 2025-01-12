@@ -4,8 +4,10 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon index.js",
-    "dev": "nodemon index.js"
+    "start": "nodemon main.js",
+    "dev": "nodemon main.js",
+    "build": "npm install --production",
+    "prod": "NODE_ENV=production node main.js"
   },
   "author": "",
   "license": "ISC",
