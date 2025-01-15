@@ -7,7 +7,12 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const [rows] = await pool.query("SELECT * FROM words");
-    res.status(200).json(rows);
+    res.status(200).json(
+      rows.map((i) => ({
+        ...i,
+        rows: JSON.parse(i.rows),
+      }))
+    );
   } catch (err) {
     console.log("error", err);
     res.status(500).json({ error: "Internal server error" });
