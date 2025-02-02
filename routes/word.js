@@ -33,4 +33,44 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { rows, ...updateData } = req.body;
+
+    // Convert rows to string if it exists
+    const dataToUpdate = {
+      ...updateData,
+      rows: rows ? rows : undefined,
+    };
+
+    // Build the SET clause with ? placeholders for MySQL
+    const setClause = Object.entries(dataToUpdate)
+      .filter(([_, value]) => value !== undefined)
+      .map(([key, _]) => `\`${key}\` = ?`)
+      .join(",");
+
+    const values = Object.entries(dataToUpdate)
+      .filter(([_, value]) => value !== undefined)
+      .map(([_, value]) => value);
+
+    const query = `UPDATE words SET ${setClause} WHERE id = ?`;
+    values.push(id); // Add id as the last parameter
+
+    const [result] = await pool.query(query, values);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "Word not found" });
+    }
+
+    res.status(200).json({
+      message: "Word updated successfully",
+      data: result,
+    });
+  } catch (err) {
+    console.error("Error updating word:", err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 module.exports = router;
