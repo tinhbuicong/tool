@@ -1,0 +1,29 @@
+{
+  "rules": [
+    {
+      "name": "Quy tắc về phong cách mã hóa",
+      "description": "Đảm bảo mã nguồn tuân thủ các quy tắc về định dạng, đặt tên biến, hàm, và cấu trúc mã.",
+      "rule": "Mã nguồn phải tuân thủ các quy tắc về định dạng, đặt tên biến, hàm, và cấu trúc mã theo tiêu chuẩn của dự án."
+    },
+    {
+      "name": "Quy tắc về bảo mật",
+      "description": "Hướng dẫn AI tránh các lỗ hổng bảo mật phổ biến, như SQL injection, XSS, và CSRF.",
+      "rule": "Mã nguồn phải tránh các lỗ hổng bảo mật phổ biến như SQL injection, XSS, và CSRF."
+    },
+    {
+      "name": "Quy tắc về hiệu suất",
+      "description": "Khuyến khích AI đề xuất các giải pháp tối ưu về hiệu suất, giảm thiểu độ phức tạp thời gian và không gian.",
+      "rule": "Mã nguồn phải được tối ưu về hiệu suất, giảm thiểu độ phức tạp thời gian và không gian."
+    },
+    {
+      "name": "Quy tắc về kiểm thử",
+      "description": "Khuyến khích AI tạo ra mã có thể kiểm thử được, bao gồm việc viết unit tests và tuân thủ các phương pháp kiểm thử tốt.",
+      "rule": "Mã nguồn phải có thể kiểm thử được, bao gồm việc viết unit tests và tuân thủ các phương pháp kiểm thử tốt."
+    },
+    {
+      "name": "Quy tắc về tuân thủ quy định",
+      "description": "Đảm bảo mã nguồn tuân thủ các quy định và tiêu chuẩn ngành, như GDPR, HIPAA, hoặc các tiêu chuẩn bảo mật khác.",
+      "rule": "Mã nguồn phải tuân thủ các quy định và tiêu chuẩn ngành, như GDPR, HIPAA, hoặc các tiêu chuẩn bảo mật khác."
+    }
+  ]
+}

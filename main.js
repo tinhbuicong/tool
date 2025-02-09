@@ -5,6 +5,7 @@ const loginRoute = require("./routes/login");
 const clientRoute = require("./routes/client");
 const wordsRoute = require("./routes/word");
 const tradingRoute = require("./routes/trading");
+const tietoeRoute = require("./routes/tietoe/tietoe");
 const path = require("path"); // Import the path module
 const cors = require("cors");
 
@@ -18,6 +19,7 @@ app.use("/api/auth", loginRoute);
 app.use("/api/client", clientRoute);
 app.use("/api/words", wordsRoute);
 app.use("/api/trading", tradingRoute);
+app.use("/api/tietoe", tietoeRoute);
 
 app.use(express.static(path.join(__dirname, "admin-view/dist")));
 
